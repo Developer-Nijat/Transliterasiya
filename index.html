@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+==========================================================
+[ Nicat Əliyev | Web Developer ]
+Name    :  Nicat Əliyev
+Email   :  developer.nijat@gmail.com
+Website :  www.nicateliyev.com
+==========================================================
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Azərbaycan latın əlifbalı mətnin Azərbaycan kiril əlifbalı mətnə çevrilməsi və ya əksinə.Bu skript hərf uyğunluğuna görə proqramlaşdırılıb. Ona görə də Roma rəqəmləri və bu kimi ifadələri də transliterasiya edir.">
+    <meta name="keywords" content="transliterasiya, Azərbaycan latın əlifbası, Azərbaycan kiril əlifbası, latın əlifbalı mətn, kiril əlifbalı mətn, latın əlifbalı mətnin kiril əlifbalı mətnə çevrilməsi, latin, latın, kiril, Roma rəqəmləri, mətn çevrilməsi, çevrilmə, tərcümə, translate, Nijat Aliyev, Nicat Əliyev, Nicat Eliyev, Nicat, Nijat, Aliyev, Eliyev, Əliyev, Nijat Aliyev Web Developer">
+    <meta name="author" content="Nijat Aliyev">
+    <title>Transliterasiya (latın əlifbalı mətnin kiril əlifbalı mətnə çevrilməsi və ya əksinə)</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body style="background-color: #F0F0F2">
+    <div class="container">
+        <br />
+        <h3 class="text-center">Transliterasiya</h3>
+        <p class="text-center">Azərbaycan latın əlifbalı mətnin Azərbaycan kiril əlifbalı mətnə çevrilməsi və ya əksinə.Bu skript hərf uyğunluğuna görə proqramlaşdırılıb. Ona görə də Roma rəqəmləri və bu kimi ifadələri də transliterasiya edir.</p>
+        <br />
+        <div class="row">
+            <div class="col-md-6">
+                <form name="form1" method="post" action="">
+                    <i>Latın</i>
+                    <textarea name="latin" rows="6" id="latin" class="form-control shadow" style="border: 1px solid blue;margin-bottom: 2px" placeholder="Latın qrafikalı mətn"></textarea>
+                    <i>Kiril</i>
+                    <textarea name="netice" rows="6" id="netice" class="form-control shadow" style="border: 1px solid green;" placeholder="Əldə edilmiş nəticə"></textarea>
+                </form>
+                <br />
+                <input name="Submit" type="submit" value="Çevir" onclick="latinkiril()" class="btn btn-primary btn-block">
+            </div>
+            <div class="col-md-6">
+                <form name="form2" method="post" action="">
+                    <i>Kiril</i>
+                    <textarea name="latin" rows="6" id="kiril" class="form-control shadow" style="border: 1px solid blue;margin-bottom: 2px" placeholder="Kiril qrafikalı mətn"></textarea>
+                    <i>Latin</i>
+                    <textarea name="netice" rows="6" id="netice" class="form-control shadow" style="border: 1px solid green;" placeholder="Əldə edilmiş nəticə"></textarea>
+                </form>
+                <br />
+                <input name="Submit" type="submit" value="Çevir" onclick="kirillatin()" class="btn btn-primary btn-block">
+            </div>
+        </div>
+        <br />
+        <p class="text-center"><a href="/" class="text-center">Back to home</a></p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    function latinkiril() {
+        var latin = document.getElementById('latin');
+        latin = form1.latin.value; //Azərbaycan latın qrafikalı mətnin daxil edilməsi
+        if (latin == "") //Şərt:Əgər mətn yeri boş olarsa xəbərdarlıq!
+        {
+            alert("Xahiş edirik çevirmək istədiyiniz mətni daxil edin");
+        }
+        var kiril = kiril; //Dəyişənin əlavə olunması
+        kiril = latin.replace(/A/g, "A").replace(/a/g, "а").replace(/B/g, "Б").replace(/b/g, "б").replace(/C/g, "Ҹ").replace(/c/g, "ҹ").replace(/Ç/g, "Ч").replace(/ç/g, "ч").replace(/E/g, "Е").replace(/e/g, "е").replace(/D/g, "Д").replace(/d/g, "д").replace(/F/g, "Ф").replace(/f/g, "ф").replace(/G/g, "Ҝ").replace(/g/g, "ҝ").replace(/Ğ/g, "Ғ").replace(/ğ/g, "ғ").replace(/H/g, "Һ").replace(/h/g, "һ").replace(/I/g, "Ы").replace(/ı/g, "ы").replace(/İ/g, "И").replace(/i/g, "и").replace(/L/g, "Л").replace(/l/g, "л").replace(/M/g, "М").replace(/m/g, "м").replace(/N/g, "Н").replace(/n/g, "н").replace(/O/g, "О").replace(/o/g, "о").replace(/P/g, "П").replace(/p/g, "п").replace(/R/g, "Р").replace(/r/g, "р").replace(/S/g, "С").replace(/s/g, "с").replace(/Ş/g, "Ш").replace(/ş/g, "ш").replace(/T/g, "Т").replace(/t/g, "т").replace(/Ü/g, "Ү").replace(/ü/g, "ү").replace(/X/g, "Х").replace(/x/g, "х").replace(/U/g, "У").replace(/u/g, "у").replace(/Y/g, "Ј").replace(/y/g, "ј").replace(/Z/g, "З").replace(/z/g, "з").replace(/Q/g, "Г").replace(/q/g, "г").replace(/K/g, "К").replace(/k/g, "к").replace(/Ö/g, "Ө").replace(/ö/g, "ө").replace(/V/g, "В").replace(/v/g, "в").replace(/J/g, "Ж").replace(/j/g, "ж"); //Hərflərin uyğunlunlaşdırılması (əvəz edilməsi)
+        form1.netice.value = kiril;
+    }
+
+    function kirillatin() {
+        var kiril = document.getElementById('kiril');
+        kiril = form2.kiril.value; //Azərbaycan kiril qrafikalı mətnin daxil edilməsi
+        if (kiril == "") //Şərt:Əgər mətn yeri boş olarsa xəbərdarlıq!
+        {
+            alert("Xahiş edirik çevirmək istədiyiniz mətni daxil edin");
+        }
+        var latin = latin; //Dəyişənin əlavə olunması
+        latin = kiril.replace(/A/g, "A").replace(/а/g, "a").replace(/Б/g, "B").replace(/б/g, "b").replace(/Ҹ/g, "C").replace(/ҹ/g, "c").replace(/Ч/g, "Ç").replace(/ч/g, "ç").replace(/Е/g, "E").replace(/е/g, "e").replace(/Д/g, "D").replace(/д/g, "d").replace(/Ф/g, "F").replace(/ф/g, "f").replace(/Ҝ/g, "G").replace(/ҝ/g, "g").replace(/Ғ/g, "Ğ").replace(/ғ/g, "ğ").replace(/Һ/g, "H").replace(/һ/g, "h").replace(/Ы/g, "I").replace(/ы/g, "ı").replace(/И/g, "İ").replace(/и/g, "i").replace(/Л/g, "L").replace(/л/g, "l").replace(/М/g, "M").replace(/м/g, "m").replace(/Н/g, "N").replace(/н/g, "n").replace(/О/g, "O").replace(/о/g, "o").replace(/П/g, "P").replace(/п/g, "p").replace(/Р/g, "R").replace(/р/g, "r").replace(/С/g, "S").replace(/с/g, "s").replace(/Ш/g, "Ş").replace(/ш/g, "ş").replace(/Т/g, "T").replace(/т/g, "t").replace(/Ү/g, "Ü").replace(/ү/g, "ü").replace(/Х/g, "X").replace(/х/g, "x").replace(/У/g, "U").replace(/у/g, "u").replace(/Ј/g, "Y").replace(/ј/g, "y").replace(/З/g, "Z").replace(/з/g, "z").replace(/Г/g, "Q").replace(/г/g, "q").replace(/К/g, "K").replace(/к/g, "k").replace(/Ө/g, "Ö").replace(/ө/g, "ö").replace(/В/g, "V").replace(/в/g, "v").replace(/Ж/g, "J").replace(/ж/g, "j"); //Hərflərin uyğunlunlaşdırılması (əvəz edilməsi)
+        form2.netice.value = latin;
+    }
+    </script>
+    
+    
+</body>
+
+</html>
